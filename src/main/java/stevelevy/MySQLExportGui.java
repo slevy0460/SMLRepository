@@ -109,6 +109,7 @@ public class MySQLExportGui extends JFrame {
 		panel.add(lblBackupFolder);
 		
 		JButton btnSelectFolder = new JButton("Select Folder");
+		btnSelectFolder.setFont(new Font("Tahoma", Font.BOLD, 11));
 		btnSelectFolder.addActionListener(new ActionListener() {
 		    public void actionPerformed(ActionEvent e) {
 		        JFileChooser fileChooser = new JFileChooser();
@@ -152,7 +153,7 @@ public class MySQLExportGui extends JFrame {
 		buttonpanel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 
 		pnlBackupFolderContents = new JPanel();
-		pnlBackupFolderContents.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Current Folder", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 0)));
+		pnlBackupFolderContents.setBorder(new TitledBorder(new EtchedBorder(EtchedBorder.LOWERED, null, null), "Current Folder", TitledBorder.LEADING, TitledBorder.TOP, null, new Color(0, 0, 255)));
 		pnlBackupFolderContents.setLayout(new BoxLayout(pnlBackupFolderContents, BoxLayout.Y_AXIS));
 		// as needed
 		JScrollPane scrollPane = new JScrollPane(pnlBackupFolderContents); // Add the panel to a scroll pane
