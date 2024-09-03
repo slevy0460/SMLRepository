@@ -129,15 +129,23 @@ public class SMLUtility {
 		}
 
 		try {
+			long startTime = System.nanoTime();
 			dbCon = DriverManager.getConnection(url, username, password);
 			PreparedStatement stmt = null;
 			stmt = dbCon.prepareStatement(query);
 			rs = stmt.executeQuery();
-			rs = stmt.executeQuery();
+			long endTime   = System.nanoTime();
+			long totalTimeNano = endTime - startTime;
+			long totalTimeSeconds = totalTimeNano / 1000000000;
+			
+			System.out.println("SQL : " + query);
+			System.out.println("Execution time : " + totalTimeNano + " nano seconds");
+			System.out.println("Execution time : " + totalTimeSeconds + " seconds");
+			
 		} catch (SQLException e) {
 			JOptionPane.showMessageDialog(null, "Error: " + e);
 		} finally {
-
+			
 		}
 
 		return rs;
@@ -151,8 +159,8 @@ public class SMLUtility {
 
 		if (database == "SQL") {
 //			url = "jdbc:mysql://192.168.1.12:3306/stevelevy"; // Gene 
-			url = "jdbc:mysql://192.168.50.115:3306/stevelevy"; // ethernet
-//			url = "jdbc:mysql://localhost:3306/stevelevy"; // ethernet
+//			url = "jdbc:mysql://192.168.50.115:3306/stevelevy"; // ethernet
+			url = "jdbc:mysql://localhost:3306/stevelevy"; // ethernet
 //			url = "jdbc:mysql://192.168.50.203:3306/stevelevy"; // wifi 
 //			url = "jdbc:mysql://sml-mysql.mysql.database.azure.com/stevelevy"; // azure
 			username = "steve";
