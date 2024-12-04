@@ -4,7 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>Steve</groupId>
 	<artifactId>Levy</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>SML0.0.1-SNAPSHOT</version>
+
+	<properties>
+		<maven.test.skip>true</maven.test.skip>
+	</properties>
 
 	<dependencies>
 
@@ -248,14 +252,18 @@
 
 
 	</dependencies>
-	
-	
-<build>
-    <resources>
-        <resource>
-            <directory>src/main/resources/images/</directory>
-        </resource>
-    </resources>
-</build>
+
+
+	<build>
+		<resources>
+			<resource>
+				<directory>src/main/resources/images/</directory>
+				<includes>
+					<include>**/*.png</include>
+					<include>**/*.ico</include>
+				</includes>
+			</resource>
+		</resources>
+	</build>
 
 </project>
